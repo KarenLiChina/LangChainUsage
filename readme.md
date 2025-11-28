@@ -11,7 +11,9 @@ pip install -r requirements.txt
 # langsmith的检测数据
 配置`LANGCHAIN_TRACING_V2`，`LANGCHAIN_API_KEY`后可以在https://smith.langchain.com/ Tracing Projects中查看调用大模型的使用情况
 
-
+# Tavily API Key的配置
+配置`TAVILY_API_KEY` 为你自己的API key，可以实现搜索功能，在agent_with_search.py 代码中用到
+可以在 https://app.tavily.com/home 申请
 ## 用langchain 链式调用LLM 案例，引入LangSmithAPIkey，就可以用LangSmith去追踪
 链式调用时，每一项必须是Runnable的对象
 call_openai.py
@@ -29,3 +31,5 @@ aichatbot.py
 
 ## 从向量数据库中检索数据，基于自己的数据作为大模型推理的一部分，依赖langchain-chroma， chroma是langchain内部提供的向量数据库
 vector_data_rag.py
+
+# 构建代理，大语言模型本身无法执行动作，只能输出文本，大语言模型可以通过推理确定要执行的操作，以及这些操作的输出，有代理决定是否需要更多的操作。依赖langgraph
