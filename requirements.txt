@@ -2,3 +2,4 @@ langchain
 langchain-openai
 langserve[all]
 langchain_community
+langchain-chroma

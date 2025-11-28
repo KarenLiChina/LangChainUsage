@@ -13,6 +13,7 @@ pip install -r requirements.txt
 
 
 ## 用langchain 链式调用LLM 案例，引入LangSmithAPIkey，就可以用LangSmith去追踪
+链式调用时，每一项必须是Runnable的对象
 call_openai.py
 
 ## 使用prompt template 去调用，并且用FastAPI进行部署
@@ -25,3 +26,6 @@ curl -X POST http://localhost:8000/translate_ai/invoke -H "Content-Type: applica
 
 ## 构建聊天机器人，使其能够对话并记住之前的互动（chat History），流式输出，依赖 langchain_community包
 aichatbot.py
+
+## 从向量数据库中检索数据，基于自己的数据作为大模型推理的一部分，依赖langchain-chroma， chroma是langchain内部提供的向量数据库
+vector_data_rag.py

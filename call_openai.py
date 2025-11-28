@@ -23,7 +23,7 @@ msg = [
 # 3. 创建返回数据的解析器
 parser = StrOutputParser()  # langchain中最简单的解析工具
 
-# 4. 得到链
+# 4. 得到链,链式调用时，每一项必须是Runnable的对象
 chain = model | parser
 
 # 5. 直接使用chain调用
