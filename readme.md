@@ -10,3 +10,15 @@ pip install -r requirements.txt
 
 # langsmith的检测数据
 配置`LANGCHAIN_TRACING_V2`，`LANGCHAIN_API_KEY`后可以在https://smith.langchain.com/ Tracing Projects中查看调用大模型的使用情况
+
+
+## 用langchain 链式调用LLM 案例，引入LangSmithAPIkey，就可以用LangSmith去追踪
+call_openai.py
+
+## 使用prompt template 去调用，并且用FastAPI进行部署
+call_LLM_withPromptTemplate.py
+
+测试curl：
+```bash
+curl -X POST http://localhost:8000/translate_ai/invoke -H "Content-Type: application/json" -d '{"input":{"language":"英语","content":"明月几时有，把酒问青天。"}}'
+```
