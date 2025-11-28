@@ -6,7 +6,7 @@ pip install -r requirements.txt
 ## 配置环境变量
 
 创建 `.env`文件，在env文件中的设置 `OPENAI_API_KEY` 和 `BASE_URL` 为自己的 key 和 url
-`LANGCHAIN_TRACING_V2`设置为true，`LANGCHAIN_API_KEY`设置为LangSmith的API Key，可以在LangSmith中查看调用大模型使用情况，不需要也可以不配置这两个变量
+`LANGCHAIN_TRACING_V2`设置为true，`LANGCHAIN_PROJECT`设置为项目名称，不配置默认为default，`LANGCHAIN_API_KEY`设置为LangSmith的API Key，可以在LangSmith中查看调用大模型使用情况，不需要也可以不配置这两个变量
 
 # langsmith的检测数据
 配置`LANGCHAIN_TRACING_V2`，`LANGCHAIN_API_KEY`后可以在https://smith.langchain.com/ Tracing Projects中查看调用大模型的使用情况
@@ -22,3 +22,6 @@ call_LLM_withPromptTemplate.py
 ```bash
 curl -X POST http://localhost:8000/translate_ai/invoke -H "Content-Type: application/json" -d '{"input":{"language":"英语","content":"明月几时有，把酒问青天。"}}'
 ```
+
+## 构建聊天机器人，使其能够对话并记住之前的互动（chat History），流式输出，依赖 langchain_community包
+aichatbot.py
