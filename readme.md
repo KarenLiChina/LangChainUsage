@@ -33,3 +33,8 @@ aichatbot.py
 vector_data_rag.py
 
 # 构建代理，大语言模型本身无法执行动作，只能输出文本，大语言模型可以通过推理确定要执行的操作，以及这些操作的输出，有代理决定是否需要更多的操作。依赖langgraph
+agent_with_search.py
+
+# RAG 是一种增强大语言模型LLM知识的方法，它通过引入额外的数据来实现
+具体实现步骤： 加载-》分割-》存储-》检索-》生成
+rag_usage.py

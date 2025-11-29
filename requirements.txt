@@ -4,3 +4,4 @@ langserve[all]
 langchain_community
 langchain-chroma
 langgraph
+langchain-core
