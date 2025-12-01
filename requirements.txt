@@ -5,3 +5,5 @@ langchain_community
 langchain-chroma
 langgraph
 langchain-core
+pymysql
+mysqlclient

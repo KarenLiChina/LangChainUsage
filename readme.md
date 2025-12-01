@@ -5,7 +5,7 @@ pip install -r requirements.txt
 
 ## 配置环境变量
 
-创建 `.env`文件，在env文件中的设置 `OPENAI_API_KEY` 和 `BASE_URL` 为自己的 key 和 url
+创建 `.env`文件，在.env文件中的设置 `MODEL_NAME`,`OPENAI_API_KEY` 和 `BASE_URL` 为自己的 key 和 url
 `LANGCHAIN_TRACING_V2`设置为true，`LANGCHAIN_PROJECT`设置为项目名称，不配置默认为default，`LANGCHAIN_API_KEY`设置为LangSmith的API Key，可以在LangSmith中查看调用大模型使用情况，不需要也可以不配置这两个变量
 
 # langsmith的检测数据
@@ -39,3 +39,9 @@ agent_with_search.py
 具体实现步骤： 加载-》分割-》存储-》检索-》生成
 检索器也需要上下文来进行检索，需要构建一个子链，采用用户最新的问题和历史聊天记录，让检索过程融入对话上下文。
 rag_usage.py
+
+# 读关系型数据库中的数据来回答用户问题，可以使用链（chains）和代理（Agents）来实现。Agent 可以根据需要多次循环查询数据库以回答问题。
+实现思路： 将问题转换为DSL查询（模型将用户输入转换为SQL查询）-》执行SQL查询-》模型根据查询结果相应用户的问题
+为了连接关系型数据库，需要安装依赖包pymysql，mysqlclient
+在.env 文件中配置自己的mysql配置：`MYSQL_HOSTNAME`,`MYSQL_PORT`,`MYSQL_DATABASE`,`MYSQL_USERNAME`,`MYSQL_PASSWORD`
+chain_get_data_rdb.py
