@@ -45,3 +45,8 @@ rag_usage.py
 为了连接关系型数据库，需要安装依赖包pymysql，mysqlclient
 在.env 文件中配置自己的mysql配置：`MYSQL_HOSTNAME`,`MYSQL_PORT`,`MYSQL_DATABASE`,`MYSQL_USERNAME`,`MYSQL_PASSWORD`
 chain_get_data_rdb.py
+
+
+# 使用Agent 去整合RDB和LLM，chain 读取rdb时比较复杂，同时在高版本的LLM给出的SQL语句中有前缀，不能很好的被db tool调用，可以采用Agent的方式整合RDB和大模型
+# angent 可能进行多次的DB的查询
+agent_get_data_rdb.py
