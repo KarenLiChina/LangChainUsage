@@ -10,7 +10,7 @@ load_dotenv()
 # 调用LLM
 # 1. 创建模型
 
-model = ChatOpenAI(model='gpt-4-turbo',
+model = ChatOpenAI(model=os.getenv("MODEL_NAME"),
                    api_key=os.getenv("OPENAI_API_KEY"),
                    base_url=os.getenv("BASE_URL"))
 # 2. 准备提示词 prompt

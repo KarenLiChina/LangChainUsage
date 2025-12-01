@@ -17,7 +17,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 load_dotenv()
 
 # 创建模型
-model = ChatOpenAI(model='gpt-4-turbo',
+model = ChatOpenAI(model=os.getenv("MODEL_NAME"),
                    api_key=os.getenv("OPENAI_API_KEY"),
                    base_url=os.getenv("BASE_URL"))
 
