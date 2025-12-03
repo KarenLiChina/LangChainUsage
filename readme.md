@@ -50,3 +50,7 @@ chain_get_data_rdb.py
 # 使用Agent 去整合RDB和LLM，chain 读取rdb时比较复杂，同时在高版本的LLM给出的SQL语句中有前缀，不能很好的被db tool调用，可以采用Agent的方式整合RDB和大模型
 # angent 可能进行多次的DB的查询
 agent_get_data_rdb.py
+
+
+# 提取结构化信息，把文本中结构化的数据提取出来
+extract_structure_data.py
