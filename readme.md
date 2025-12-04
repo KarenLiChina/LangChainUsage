@@ -28,7 +28,7 @@ call_LLM_withPromptTemplate.py
 curl -X POST http://localhost:8000/translate_ai/invoke -H "Content-Type: application/json" -d '{"input":{"language":"英语","content":"明月几时有，把酒问青天。"}}'
 ```
 
-# 具体案例
+# 具体实现
 ## 构建聊天机器人，使其能够对话并记住之前的互动（chat History），流式输出，依赖 langchain_community包
 aichatbot.py
 
